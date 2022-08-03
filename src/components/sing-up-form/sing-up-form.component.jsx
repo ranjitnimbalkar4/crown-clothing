@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createAuthUserWithUserAndPassword , createUserDocumentFromAuth} from "../../../utils/firebase/firebase.util";
+import { createAuthUserWithUserAndPassword , createUserDocumentFromAuth} from "../../utils/firebase/firebase.util";
 
 const defauldFormFields = {
     displayName : '',

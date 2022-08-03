@@ -6,7 +6,7 @@ import {
 } from "../../utils/firebase/firebase.util";
 import { useEffect } from "react";
 import { getRedirectResult } from "firebase/auth";
-import SingUpForm from "../../components/category-item/sing-up-form/sing-up-form.component";
+import SingUpForm from "../../components/sing-up-form/sing-up-form.component";
 
 const SingIn = () => {
   useEffect(() => {
