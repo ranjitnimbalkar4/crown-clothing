@@ -3,6 +3,7 @@ import { signInWithGooglePopup, createUserDocumentFromAuth, singInAuthUserWithUs
 import FormInput from "../form-input/form-input.component";
 import './sign-in.styles.scss';
 import Button from "../button/button.component";
+//import { UserContext } from "../contexts/user.context";
 
 
 const defauldFormFields = {  
@@ -14,6 +15,8 @@ const SingInForm = () => {
 
     const [formFields, setFormFields] = useState(defauldFormFields);
     const { email, password } = formFields;
+
+    //const {setCurrentUser} = useContext(UserContext);
 
     const logGoogleUser = async () => {
         const { user } = await signInWithGooglePopup();
@@ -34,8 +37,8 @@ const SingInForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
          try {     
-            const resp = await singInAuthUserWithUserAndPassword(email, password);
-            console.log(resp);
+            const {user} = await singInAuthUserWithUserAndPassword(email, password);
+            //setCurrentUser(user);
             resetFormFields();
         } catch (error) {
             switch(error.code){
