@@ -10,9 +10,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />}></Route> 
-        <Route index path="/shop" element={<Shop />}></Route>         
-        <Route path="/auth" element={<Authentication/>}></Route>
-        <Route path="/checkout" element={<Checkout/>}/>
+        <Route index path="shop/*" element={<Shop />}></Route>         
+        <Route path="auth" element={<Authentication/>}></Route>
+        <Route path="checkout" element={<Checkout/>}/>
       </Route>
     </Routes>
   );
