@@ -2,9 +2,8 @@ import { useState } from "react";
 import { signInWithGooglePopup, createUserDocumentFromAuth, singInAuthUserWithUserAndPassword} from "../../utils/firebase/firebase.util";
 import FormInput from "../form-input/form-input.component";
 import './sign-in.styles.scss';
-import Button from "../button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 //import { UserContext } from "../contexts/user.context";
-
 
 const defauldFormFields = {  
     email: '',
@@ -68,8 +67,8 @@ const SingInForm = () => {
                 <FormInput label='Password' type='password' required name="password" value={password} onChange={handleChange}/>
                 
                 <div className="buttons-container">
-                    <Button buttonType='inverted' type="submit">Sing In</Button>
-                    <Button type='button'  buttonType='google' onClick={logGoogleUser}>Google Sign In</Button>  
+                    <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type="submit">Sing In</Button>
+                    <Button type={BUTTON_TYPE_CLASSES.google}  onClick={logGoogleUser}>Google Sign In</Button>  
                 </div>    
             </form> 
         </div>
